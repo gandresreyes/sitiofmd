@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { IncioComponent } from './pages/incio/incio.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IncioComponent
   ],
   imports: [
     BrowserModule,
