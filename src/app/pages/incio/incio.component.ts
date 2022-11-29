@@ -17,22 +17,23 @@ export class IncioComponent implements OnInit {
   }
   ngAfterViewInit():void{
     let canvas = this.canvas.nativeElement
-    let phi = 0   
+    let phi = 0 
     const globe = createGlobe(canvas, {
       devicePixelRatio: 2,
-    width: 1200,
-    height: 1200,
-    phi: 0,
-    theta: -50,
-    dark: 1,
-    diffuse: 1.2,
-    scale: 1,
-    mapSamples: 16000,
-    mapBrightness: 6,
-    baseColor: [1, 1, 1],
-    markerColor: [1, 0.5, 1],
-    glowColor: [1, 1, 1],
-    offset: [0, 0],
+      width: 1200,
+      height: 1200,
+      phi: 0,
+      theta: -50,
+      dark: 0,
+      diffuse: 1.2,
+      scale: 1,
+      mapSamples: 16000,
+      mapBrightness: 6,
+      baseColor: [1, 1, 1],
+      markerColor: [0, 0, 1],
+      glowColor: [1, 1, 1],
+      offset: [0, 0],
+      opacity:0.8,
     markers: [
         { location: [37.7595, -122.4367], size: 0.03 },       
         { location: [4.3556, -74.0451], size: 0.1 },//bogota
@@ -44,23 +45,13 @@ export class IncioComponent implements OnInit {
         { location: [48.5142, 2.2056], size: 0.05 },//paris
         { location: [40.2459, 3.4209], size: 0.05 },//españa
       ],
-      onRender: (state) => {
-        // Called on every animation frame.
-        // `state` will be an empty object, return updated params.
-        // Called on every animation frame.
-        // `state` will be an empty object, return updated params.
+      onRender: (state) => {      
         state['phi'] = phi
-        phi += 0.01
+        phi += 0.01        
       },
     })
 
-    // `globe` will be a Phenomenon (https://github.com/vaneenige/phenomenon) instance.
-    // To pause requestAnimationFrame:
-    // `globe.toggle()`
-    // To remove the instance:
-    // `globe.destroy()`
-    // ...
-
+    
   }
 
 }
