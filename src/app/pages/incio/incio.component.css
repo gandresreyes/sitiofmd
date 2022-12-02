@@ -15,14 +15,29 @@
     letter-spacing: -.06em;
     margin: 0 0 16px;
   }
-  
-  #uno ,#dos , #tres{
-    color: gray;
-    display: block;
+  .fmd{
+    font-weight: 700;
+    font-size: 1.2em;   
+  }
+  .text-gray{
+    color: #666;
+  }  
+  #uno ,#dos , #tres{    
+    display: inline-block;
     font-size: 100px;
     line-height: 1.1;
     position: relative;
   }
+  .sub-2{
+    font-size: 1.5rem; 
+    font-weight: 600
+
+  }
+  .sub-3{
+    font-size: 0.8rem; 
+    font-weight: 700;  
+  }
+  
   
   #uno:before, #dos:before, #tres:before {   
     content: var(--content);
@@ -40,8 +55,8 @@
     animation-name: var(--animation, a);
     animation-duration: 8s;
     animation-iteration-count: infinite;
-   
   }
+
 
 
   .btn-portafolio{
@@ -73,16 +88,16 @@
     0%,
     16.667%,
     100%{background:linear-gradient(90deg, #007CF0,#00DFD8);transition: 0.5s;
-        box-shadow:  0px 10px  25px 1px #00dfd846, 0px -10px 40px 1px #007CF046
+        box-shadow:  0px 20px  25px  -10px #00dfd846, 0px -20px 25px -10px #007cf06b
 
      }
     33.333%,
     50%{background:linear-gradient(90deg, #7928CA,#FF0080);transition: 0.5s;
-        box-shadow:  0px 10px  25px 1px #FF008046, 0px -10px 40px 1px #7928CA46
+        box-shadow:  0px 20px  25px  -10px #FF008046, 0px -20px 25px -10px #7928CA6b
     }
     66.667%,
     83.333%{background:linear-gradient(90deg, #FF4D4D,#F9CB28);transition: 0.5s;
-        box-shadow:  0px 10px  25px 1px #F9CB2846, 0px -10px 40px 1px #FF4D4D46
+        box-shadow:  0px 20px  25px  -10px #F9CB2846, 0px -20px 25px -10px #FF4D4D6b
     }
 
   }

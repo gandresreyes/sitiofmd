@@ -1,0 +1,16 @@
+{ 
+    "header":{
+        "es":{
+            "0":"productos",
+            "1":"acerca de",
+            "2":"cantáctanos"
+        },
+        "eng":{
+            "0":"Products",
+            "1":"About",
+            "2":"Contact Us"    
+        }
+    }
+    
+
+}

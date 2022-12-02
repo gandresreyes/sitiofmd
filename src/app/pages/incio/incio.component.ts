@@ -1,18 +1,31 @@
 import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import createGlobe from 'cobe'
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
+
+
+
 
 @Component({
   selector: 'app-incio',
   templateUrl: './incio.component.html',
   styleUrls: ['./incio.component.css']
+  
 })
 export class IncioComponent implements OnInit { 
+
+  
   @ViewChild('canvas') canvas!:ElementRef
 
   constructor() { }
 
-  ngOnInit(): void {
-  
+  ngOnInit(): void {  
    
   }
   ngAfterViewInit():void{
@@ -20,8 +33,8 @@ export class IncioComponent implements OnInit {
     let phi = 0 
     const globe = createGlobe(canvas, {
       devicePixelRatio: 2,
-      width: 1200,
-      height: 1200,
+      width: 1000,
+      height: 1000,
       phi: 0,
       theta: -50,
       dark: 0,
@@ -49,8 +62,7 @@ export class IncioComponent implements OnInit {
         state['phi'] = phi
         phi += 0.01        
       },
-    })
-
+    });
     
   }
 
