@@ -3,6 +3,13 @@
     bottom: 1rem;
     right: 0;
     width: 120px;
-    height: auto;    
+    height: auto;  
+    z-index: 9999;  
 
+}
+.img-icon{
+    padding: 3px;
+    background-color: pink;
+    border-radius: 50%;
+    width: 40px;
 }

@@ -1,15 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import createGlobe from 'cobe'
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  // ...
-} from '@angular/animations';
-
-
+import categorias from 'src/assets/json/categorias.json'
+import { IdiomasService } from '../../servicios/idiomas.service';
+import textoInicio from 'src/assets/json/textosinicio.json'
 
 
 @Component({
@@ -21,13 +14,37 @@ import {
 export class IncioComponent implements OnInit { 
 
   
-  @ViewChild('canvas') canvas!:ElementRef
+  //@ViewChild('canvas') canvas!:ElementRef ;
+  @ViewChild('uno') uno!:ElementRef;
+  @ViewChild('dos') dos!:ElementRef;
+  @ViewChild('tres') tres!:ElementRef;
+  categoriaObj:any ;  
+  textos:string = "";
 
-  constructor() { }
+  constructor(private idiomaserv: IdiomasService, private renderer2: Renderer2) { }
 
   ngOnInit(): void {  
-   
+   this.categoriaObj = categorias
+   this.idiomaserv.IdiomaAction$.subscribe(arg=>{      
+      if(arg == "es"){
+        this.textos = textoInicio.inicio.es        
+        this.renderer2.addClass(this.uno.nativeElement,'unoes')
+        this.renderer2.addClass(this.dos.nativeElement,'doses')
+        this.renderer2.addClass(this.tres.nativeElement,'treses')
+        
+      }else{
+        this.textos = textoInicio.inicio.eng
+        this.renderer2.removeClass(this.uno.nativeElement,'unoes')
+        this.renderer2.removeClass(this.dos.nativeElement,'doses')
+        this.renderer2.removeClass(this.tres.nativeElement,'treses')
+      }     
+   })
+    
+  }ngAfterViewInit():void{
+    
   }
+ 
+  /*
   ngAfterViewInit():void{
     let canvas = this.canvas.nativeElement
     let phi = 0 
@@ -40,7 +57,7 @@ export class IncioComponent implements OnInit {
       dark: 0,
       diffuse: 1.2,
       scale: 1,
-      mapSamples: 16000,
+      mapSamples: 10000,
       mapBrightness: 6,
       baseColor: [1, 1, 1],
       markerColor: [0, 0, 1],
@@ -64,6 +81,6 @@ export class IncioComponent implements OnInit {
       },
     });
     
-  }
+  }*/
 
 }

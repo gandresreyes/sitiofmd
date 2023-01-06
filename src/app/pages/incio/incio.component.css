@@ -1,89 +1,187 @@
-#uno{
-    --start-color:#007CF0; --end-color:#00DFD8; --content: 'Develop.';
+.uno {
+    --start-color:#007CF0; --end-color:#00DFD8; --content: 'Flowers.';
 }
-#dos{
-    --start-color:#7928CA; --end-color:#FF0080; --content: 'Preview.';--animation:a2;
+.dos{
+    --start-color:#7928CA; --end-color:#FF0080; --content: 'Logistics.';--animation:a2;--animation2:b2
  }
-#tres{
-    --start-color:#FF4D4D; --end-color:#F9CB28; --content: 'Ship.';--animation: a3;
+.tres{
+    --start-color:#FF4D4D; --end-color:#F9CB28; --content: 'Shipping.';--animation: a3;--animation2:b3
+}
+.unoes{
+   --content: 'Flores.';
+}
+.doses{
+  --content: 'Logística.';
+}
+.treses{
+  --content: 'Envios.';
+}
+.uno ,.dos , .tres , .unoes, .doses , .treses  {    
+  display: inline-block;
+  font-size: 6rem;
+  line-height: 1.1;
+  position: relative;
+  animation-name: var(--animation2, b);
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+.alto{
+  height: 90px;
+  min-height: 88px;
+  
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: -.06em;
+  margin: 0 0 16px;
+}
+.fmd{
+  font-weight: 700;
+  font-size: 1.2em;   
+}
+.img-flores{
+  padding: 20px;
+  background: #8080800f;  
+}
+.img-icon{
+  padding: 3px;
+  background-color: rgba(255, 192, 203, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  border: solid 1px rgba(0, 0, 0, 0.26);
+}
+.card{
+  box-shadow:0 5px 10px rgba(0,0,0,.1), inset -15px -15px 20px -10px #f6f6f6f6;;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px); 
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.text-gray{
+   color: #666;
+}  
+
+.sub-2{
+  font-size: 1.5rem; 
+  font-weight: 600
+
+}
+.sub-3{
+  font-size: 0.8rem; 
+  font-weight: 700;  
 }
   
-  h1 {
-    text-align: center;
-    font-size: 5rem;
-    font-weight: 800;
-    letter-spacing: -.06em;
-    margin: 0 0 16px;
-  }
-  .fmd{
-    font-weight: 700;
-    font-size: 1.2em;   
-  }
-  .text-gray{
-    color: #666;
-  }  
-  #uno ,#dos , #tres{    
-    display: inline-block;
-    font-size: 100px;
-    line-height: 1.1;
-    position: relative;
-  }
-  .sub-2{
-    font-size: 1.5rem; 
-    font-weight: 600
-
-  }
-  .sub-3{
-    font-size: 0.8rem; 
-    font-weight: 700;  
-  }
   
+.uno:before, .dos:before, .tres:before , .unoes::before , .doses::before , .treses::before{   
+  content: var(--content);
+  position: absolute;
+  background:linear-gradient(90deg, var(--start-color), var(--end-color)) ;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text; 
+  font-size: 6rem;   
+  inset: 0; 
+  opacity: 1;       
+  width: 100%;    
+  margin-bottom: -10px;  
+  animation-name: var(--animation, a);
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  }
+
+.ver-mas{
+  position: relative;
+  border-radius: 5px;
+  padding: 0.6rem 5rem; 
+  box-shadow:  0px 20px  25px  -10px #00dfd846, 0px -20px 25px -10px #007cf06b;    
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: white;
+}
+.ver-mas:hover  {
+  background:linear-gradient(90deg, #007CF0,#00DFD8) ; 
+  color: white;
   
-  #uno:before, #dos:before, #tres:before {   
-    content: var(--content);
-    position: absolute;
-    background:linear-gradient(90deg, var(--start-color), var(--end-color)) ;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text; 
-    font-size: 100px;   
-    inset: 0; 
-    opacity: 1;       
-    width: 100%;    
-    margin-bottom: -10px;  
-    animation-name: var(--animation, a);
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
-  }
+}
+.line{
+  display: flex;
+  min-width: 1px ;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+}
+.line-child{  
+  padding-right: 1px;
+  width: 2px;
+  align-self: center;
+  height: 80px;
+}
+.number{
+  display: inline-flex;
+  border-radius: 100%;
+  color: white;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700; 
+  margin-top: 0;
+}
+.title-line{
+  background-clip:text; 
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: transparent;
+  padding-left: auto;
+  padding-top: auto;  
+  font-size: 1.8rem;
+  font-weight: 700;
 
+}
+.sub-line{
+  font-weight: 700;
+  font-size: 3rem;
+}
 
+.ver-mas::before{
+  content: "";
+  position: absolute;
+  border-radius: 5px;
+  background:linear-gradient(90deg, #007CF0,#00DFD8) ; 
+  left: -3px;
+  top: -3px;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  z-index: -1;
+}   
 
-  .btn-portafolio{
-    position: relative;
-    background-color: white;
-    border-radius: 5px;
-    padding: 0.6rem 5rem;
-    transition: 0.5s;
-
-    
-  }
-  .btn-portafolio::before{
-    content: "";
-    position: absolute;   
-    left: -3px;
-    top: -3px;
-    width: calc(100% + 6px);
-    height: calc(100% + 6px);
-    background:linear-gradient(90deg, #007CF0,#00DFD8) ;
-    z-index: -1;
-    border-radius: 5px;   
-    animation-name: btn;
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
-   
-    
-  }
+.btn-portafolio{
+  position: relative;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0.6rem 5rem;
+  transition: 0.5s;    
+}
+.btn-portafolio::before{
+  content: "";
+  position: absolute;   
+  left: -3px;
+  top: -3px;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  background:linear-gradient(90deg, #007CF0,#00DFD8) ;
+  z-index: -1;
+  border-radius: 5px;   
+  animation-name: btn;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;   
+  
+}
   @keyframes btn {
     0%,
     16.667%,
@@ -108,11 +206,12 @@
     16.667%,
     100% {
       opacity: 1;
+      
     }
   
     33.333%,
     83.333% {
-      opacity: 0;
+      opacity: 0;      
     }
   }
   
@@ -146,5 +245,51 @@
       opacity: 1;
     }
   }
+  /*animacion2*/
+  @keyframes b {
+
+    0%,
+    16.667%,
+    100% {
+      color: transparent;
+      
+    }
   
+    33.333%,
+    83.333% {
+      color: var(--text);     
+    }
+  }
+  
+  @keyframes b2 {
+  
+    0%,
+    100% {
+      color: var(--text);
+    }
+  
+    33.333%,
+    50% {
+      color: transparent;
+    }
+  
+    16.667%,
+    66.667% {
+      color: var(--text); 
+    }
+  }
+  
+  @keyframes b3 {
+    0%,
+    50%,
+    100% {
+      color: var(--text); 
+     
+    }
+  
+    66.667%,
+    83.333% {
+      color: transparent; 
+    }
+  }
  

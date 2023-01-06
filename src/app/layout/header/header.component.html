@@ -1,29 +1,29 @@
 <nav class="navbar navbar-expand-lg  sticky-top header ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img  height="50" src="assets/img/logo-fmd.png" alt="fmd"></a>
+    <a class="navbar-brand" [routerLink]="['/']"><img  height="80" src="assets/img/logo-fmd.png" alt="fmd"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active "  href="#">{{text[0] | uppercase  }}</a>
+          <a class="nav-link color" [routerLink]="['/productos']" routerLinkActive="active" >{{text[0] | uppercase  }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">{{text[1] | uppercase }}</a>
+          <a class="nav-link" routerLinkActive="active">{{text[1] | uppercase }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">{{text[2] | uppercase }}</a>
+          <a class="nav-link" routerLinkActive="active">{{text[2] | uppercase }}</a>
         </li>
       </ul>
       <span class="d-flex">
-        <div class="mx-2">
+        <div class="mx-2" (click)="darkMode()">
           <img src="assets/img/moon.svg" alt="theme">
         </div>
-        <div class="mx-2 pb-1 active"> 
+        <div class="mx-2 pb-1" (click)="idioma('eng')" [ngClass]="{'active' : flag=='eng'}"> 
           <img width="24" src="assets/img/eeuu-flag.png" alt="eeuu"> 
         </div>
-        <div  class="mx-2  pb-1">
+        <div  class="mx-2  pb-1" (click)="idioma('es')" [ngClass]="{'active' : flag=='es'}">
           <img width="24" src="assets/img/col-flag.png" alt="español">    
         </div>
              

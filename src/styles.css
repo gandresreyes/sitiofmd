@@ -1,4 +1,23 @@
 
+
+body{
+    --color-bg:#fff;
+    --color-txt: #000;
+}
+body.dark-mode{
+    --color-bg:#000;
+    --color-txt: #fff;
+}
+
+
+body{
+    background-color: var(--color-bg) ;
+    color:  var(--color-txt);
+}
 @media (max-width: 960px){
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+    }
     
 }

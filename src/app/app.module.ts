@@ -8,6 +8,8 @@ import { IncioComponent } from './pages/incio/incio.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { BtnWspComponent } from './layout/btn-wsp/btn-wsp.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PortafolioComponent } from './pages/portafolio/portafolio.component';
+import { RedesComponent } from './layout/redes/redes.component';
 
 
 
@@ -19,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     IncioComponent,
     HeaderComponent,
-    BtnWspComponent
+    BtnWspComponent,
+    PortafolioComponent,
+    RedesComponent
   ],
   imports: [
     BrowserModule,

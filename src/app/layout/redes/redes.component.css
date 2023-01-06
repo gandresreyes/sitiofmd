@@ -1,0 +1,24 @@
+.social{
+    position: fixed;
+    right: 10px;    
+    top: calc(50% - 90px);
+}
+.social-size{
+    height: 150px;
+    width: 60px;
+}
+svg{
+    height: 40px;
+    width: auto;
+}
+
+.icon-fc:hover  path{
+    fill:#3b5998;
+}
+
+.icon-tw:hover  path{
+    fill:#00acee
+}
+.icon-insta:hover  path{
+    fill: #c51d34
+}

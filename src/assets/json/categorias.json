@@ -1,0 +1,35 @@
+[
+    {"id":1,
+    "nombre":"Rosas y mini rosas",
+    "img": "militsa.png"
+    },
+    {"id":2,
+    "nombre":"Orquideas",
+    "img": "Dendrobium.png"
+    },
+    {"id":3,
+    "nombre":"Heliconias",
+    "img": "orthotricha.png"
+    },
+    {"id":4,
+    "nombre":"Gerberas",
+    "img": "Oxford.png"
+    },
+    {"id":5,
+    "nombre":"Foliages",
+    "img": "Pittosporum.png"
+    },
+    {"id":6,
+    "nombre":"Fillers",
+    "img": "Statice-Rosado.png"
+    },
+    {"id":7,
+    "nombre":"Claveles y mini claveles ",
+    "img": "Ormea-Red.png"
+    },
+    {"id":7,
+    "nombre":"Alstroemerias",
+    "img": "Mistique.png"
+    }
+
+]

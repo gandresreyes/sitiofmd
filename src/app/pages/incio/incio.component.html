@@ -3,59 +3,168 @@
     <div class="col-lg-12">
         <div  >
             <h1 >
-                <span id="uno" >
-                  Develop.
+                <span #uno  class="uno">
+                    {{textos[15]}}
                 </span>
-                <span id="dos">
-                  Preview.
+                <span  #dos class="dos">
+                    {{textos[16]}}
                 </span>
-                <span id="tres">
-                  Ship.
+                <span  #tres class="tres">
+                    {{textos[17]}} 
                 </span>
               </h1>  
         
             <div class="text-center pt-4 ">
-                <h2 class="text-gray my-5 text-uppercase sub-2">Bienvenido a <span class="fmd">fmd </span><br> traemos los necesistas, cuando lo necesistas!</h2>
+                <h2 class="text-gray my-5 text-uppercase sub-2">{{textos[0] | uppercase }} <span class="fmd">fmd </span><br> {{textos[1] | uppercase }}</h2>
                 <div class="pt-4">
-                    <button class="btn btn-portafolio ">Ver Portafolio</button>
+                    <button class="btn btn-portafolio ">{{textos[2] | titlecase }} </button>
                 </div>           
             </div>
-
-            <div class="text-center">                
-                <p class="text-gray my-5 text-uppercase sub-3">
-                    COMERCIALIZACIÓN DE FLORES HACIA CUALQUIER PARTE DEL MUNDO
-                </p>
-            </div>
-
         </div> 
     </div>   
 </div>     
 
-<div class="row">
-    <div class="col-lg-3">
-        <div class="card" >
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="row gy-4">
+    <div class="text-center">                
+        <p class="text-gray my-5 text-uppercase sub-3">
+            {{textos[3] | uppercase }}
+        </p>
+       
+    </div>
+    <div>
+        
+    </div>
+    <div class="col-lg-3" *ngFor="let categ of categoriaObj">
+        <div class="card" >     
+            <div class=" img-flores">
+                <img  src="assets/img/flores/categorias/{{categ.img}}" class="card-img-top " alt="...">  
+            </div>      
+                              
+            <div class="card-body d-flex justify-content-center align-items-center alto">
+                <span class="pb-2 "><img class="img-icon me-2" src="assets/img/flowe.svg" alt=""></span>
+                <h5 class="card-title text-width">{{categ.nombre}}</h5>                
             </div>
         </div>
     </div>
-    <div class="col-lg-3">heloo</div>
-    <div class="col-lg-3">hello</div>
-    <div class="col-lg-3">helpoo</div>
-    
-
+    <div class="pt-4 text-center">
+        <button class="btn ver-mas ">{{textos[4] | titlecase }}</button>
+    </div>  
 </div>
+<div class="row">
+    <div class="line">
+        <div class="line-child" style="background: linear-gradient(transparent, #00dfd8);"></div>
+    </div>
+    <div class="text-center">
+        <div class="number" style="background: linear-gradient(90deg,#007cf0, #00dfd8);">1</div>
+    </div>
+
+    <div class="text-center">
+        <span class="title-line" style="background-image: linear-gradient(90deg,#007cf0, #00dfd8);">{{textos[5] | uppercase }}</span>
+    </div>
+    <div class="text-center">
+        <h3 class="sub-line">{{textos[6] | uppercase }}</h3>        
+        <p class="w-75 mx-auto pt-4 p-line" style="font-size:20px ;">
+            {{textos[7]  }}
+        </p> 
+    </div>
+    <!--------------->
+    <div class="line">
+        <div class="line-child" style="background:linear-gradient( transparent,#FF0080)"></div>
+    </div>
+    <div class="text-center">
+        <div class="number" style="background:linear-gradient(90deg, #7928CA,#FF0080)">2</div>
+    </div>
+
+    <div class="text-center">
+        <span class="title-line" style="background-image:linear-gradient(90deg, #7928CA,#FF0080)">{{textos[8] | uppercase }}</span>
+    </div>
+    <div class="text-center">
+        <h3 class="sub-line">{{textos[9] | uppercase }}</h3>        
+        <p class="w-75 mx-auto pt-4 p-line" style="font-size:20px ;">
+            {{textos[10]  }}
+        </p> 
+    </div>
+    <!--------------->
+    <div class="line">
+        <div class="line-child" style="background:linear-gradient( transparent,#F9CB28)"></div>
+    </div>
+    <div class="text-center">
+        <div class="number" style="background:linear-gradient(90deg, #FF4D4D,#F9CB28)">2</div>
+    </div>
+
+    <div class="text-center">
+        <span class="title-line" style="background-image:linear-gradient(90deg, #FF4D4D,#F9CB28)">{{textos[11] | uppercase }}</span>
+    </div>
+    <div class="text-center">
+        <h3 class="sub-line">{{textos[12] }}</h3>        
+        <p class="w-75 mx-auto pt-4 p-line" style="font-size:20px ;">
+            {{textos[13]  }}
+            <br>
+            <br>{{textos[14]  }}Para exportar, acompañamos cuidadosamente cada una de las etapas de la cadena de suministro, con lo cual nos aseguramos de que se cumplan los más altos estándares de trazabilidad. De esta forma, cargamos un contenedor de 40’HC, 20 paletas para un total de 1030 cajas por contenedor.
+        </p> 
+    </div>
+</div>
+
+
+
 <div class="row py-4">
+    <h4>Contactanos</h4>
     <div class="col-lg-6 d-flex justify-content-center align-items-center">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id at, saepe quaerat adipisci architecto quis veniam ratione, cumque doloribus consequuntur doloremque dolorem quas. Sunt autem repellendus perspiciatis ipsam, dolores nemo!
+    <div class="border border-dark rounded p-4">
+        <form class="row g-3 needs-validation" novalidate>
+            <div class="col-md-6">
+              <label for="validationCustom01" class="form-label">First name</label>
+              <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom02" class="form-label">Last name</label>
+              <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>           
+            <div class="col-md-6">
+              <label for="validationCustom03" class="form-label">City</label>
+              <input type="text" class="form-control" id="validationCustom03" required>
+              <div class="invalid-feedback">
+                Please provide a valid city.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom04" class="form-label">State</label>
+              <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Choose...</option>
+                <option>...</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid state.
+              </div>
+            </div>           
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                  Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+        </form>
+    </div>
 
     </div>
-    <div class="col-lg-6">
-        <canvas #canvas id="cobe" style="width: 500px; height: 500px;" width="1000" height="1000"></canvas>
+    <div class="col-lg-6 overflow-hidden d-flex justify-content-center align-items-center">
+        
+    <!--<canvas #canvas id="cobe" style="width: 500px; height: 500px;" width="1000" height="1000"></canvas>-->
+    
     </div>
 
 </div>
