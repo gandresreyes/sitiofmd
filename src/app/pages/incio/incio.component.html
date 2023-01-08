@@ -17,7 +17,7 @@
             <div class="text-center pt-4 ">
                 <h2 class="text-gray my-5 text-uppercase sub-2">{{textos[0] | uppercase }} <span class="fmd">fmd </span><br> {{textos[1] | uppercase }}</h2>
                 <div class="pt-4">
-                    <button class="btn btn-portafolio ">{{textos[2] | titlecase }} </button>
+                    <button class="btn btn-portafolio" [routerLink]="['/productos']">{{textos[2] | titlecase }} </button>
                 </div>           
             </div>
         </div> 
@@ -28,11 +28,10 @@
     <div class="text-center">                
         <p class="text-gray my-5 text-uppercase sub-3">
             {{textos[3] | uppercase }}
-        </p>
-       
+        </p>       
     </div>
     <div>
-        
+     <!--inico de categorias-->   
     </div>
     <div class="col-lg-3" *ngFor="let categ of categoriaObj">
         <div class="card" >     
@@ -100,13 +99,10 @@
         <p class="w-75 mx-auto pt-4 p-line" style="font-size:20px ;">
             {{textos[13]  }}
             <br>
-            <br>{{textos[14]  }}Para exportar, acompañamos cuidadosamente cada una de las etapas de la cadena de suministro, con lo cual nos aseguramos de que se cumplan los más altos estándares de trazabilidad. De esta forma, cargamos un contenedor de 40’HC, 20 paletas para un total de 1030 cajas por contenedor.
+            <br>{{textos[14] }}
         </p> 
     </div>
 </div>
-
-
-
 <div class="row py-4">
     <h4>Contactanos</h4>
     <div class="col-lg-6 d-flex justify-content-center align-items-center">
@@ -161,10 +157,8 @@
     </div>
 
     </div>
-    <div class="col-lg-6 overflow-hidden d-flex justify-content-center align-items-center">
-        
-    <!--<canvas #canvas id="cobe" style="width: 500px; height: 500px;" width="1000" height="1000"></canvas>-->
-    
+    <div class="col-lg-6 overflow-hidden d-flex justify-content-center align-items-center">        
+    <!--<canvas #canvas id="cobe" style="width: 500px; height: 500px;" width="1000" height="1000"></canvas>-->    
     </div>
 
 </div>

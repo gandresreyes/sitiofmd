@@ -2,6 +2,7 @@
     position: fixed;
     right: 10px;    
     top: calc(50% - 90px);
+    z-index: 99999;
 }
 .social-size{
     height: 150px;

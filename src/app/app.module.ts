@@ -10,9 +10,8 @@ import { BtnWspComponent } from './layout/btn-wsp/btn-wsp.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 import { RedesComponent } from './layout/redes/redes.component';
-
-
-
+import { FooterComponent } from './layout/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -23,14 +22,15 @@ import { RedesComponent } from './layout/redes/redes.component';
     HeaderComponent,
     BtnWspComponent,
     PortafolioComponent,
-    RedesComponent
+    RedesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

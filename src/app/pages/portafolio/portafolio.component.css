@@ -1,79 +1,94 @@
-.uno{
-    --start-color:#007CF0; --end-color:#00DFD8; --content: 'Develop.';
+.titulo{
+  background: var(--text-h2);
+  background-size: 100% 200%;
+  background-position: 50% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 16px;
+  padding-bottom: 12px;
+  font-weight: 700;
+  font-size: 3.75rem;;
 }
-h1 {
-    text-align: center;
-    font-size: 5rem;
-    font-weight: 800;
-    letter-spacing: -.06em;
-    margin: 0 0 16px;
-  }
+
+input{
+  border: none;
+  padding-left: 10px;
+  background-color: transparent;
+  padding: 10px 5px;
+  outline: none;
+  color: #999;  
+}
+
+.inputfather{  
+  align-items: center;
+  font-size: 0.85rem;
+  max-width: 90%;
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
+}
+.txt-filter{
+  color: var(--color-txt);
+  margin: 0;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+}
+.img-flores{
+  height: 180px;
+  max-height: 180px;
+  width: auto;
+  position: relative;
+}
+.card-img-top{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.card{
+  border: 1px solid  var(--color-border);
+  background-color: var(--color-bg);
+  color: var(--color-txt);
+}
+.card:hover{
+  border: 1px solid  var(--color-txt);
+
+}
+.card-title{
+  font-size: 16px;
+  font-weight: 700;
+}
+.img-float{
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 4px;
   
-  span {
-    color: #fff;
-    display: block;
-    font-size: 100px;
-    line-height: 1.1;
-    position: relative;
-  }
+}
+.img-float img{
+  width: 100%;
+  filter: var(--filter-img);
+}
+.aside{
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.aside:hover{
+  border-radius: 5px;
+  border: 1px solid var(--color-border);
   
-  span::before {
-    animation-name: var(--animation, a);
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
-    background: linear-gradient(90deg, red, blue);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #fff;
-    font-size: 100px;
-    position: absolute;
-    inset: 0;
-    content: var(--content);
-    opacity: 1;
-    margin-bottom: -10px;  }
-  
-  
-  @keyframes a {
-  
-    0%,
-    16.667%,
-    100% {
-      opacity: 1;
-    }
-  
-    33.333%,
-    83.333% {
-      opacity: 0;
-    }
-  }
-  
-  @keyframes a2 {
-  
-    0%,
-    100% {
-      opacity: 0;
-    }
-  
-    33.333%,
-    50% {
-      opacity: 1;
-    }
-  
-    16.667%,
-    66.667% {
-      opacity: 0;
-    }
-  }
-  
-  @keyframes a3 {
-    0%,
-    50%,
-    100% {
-      opacity: 0;
-    }
-  
-    66.667%,
-    83.333% {
-      opacity: 1;
-    }
-  }
+}
+
+.active{   
+  box-shadow: #00DFD8 0px 0px 4px 1px;
+}
+
+p.aside{
+  margin-bottom: 0.5em;
+}

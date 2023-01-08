@@ -1,11 +1,42 @@
-<h1>
-    <span class="uno">
-      Develop.
-    </span>
-    <span style="--start-color:#7928CA; --end-color:#FF0080; --content: 'Preview.'; --animation:a2;">
-      Preview.
-    </span>
-    <span style="--start-color:#FF4D4D; animation-name:a3; --end-color:#F9CB28; --content: 'Ship.'; --animation: a3">
-      Ship.
-    </span>
-  </h1>
+
+
+<div class="row mt-2">
+  <div class="text-center ">
+    <h1  class="titulo">{{textos[0] | uppercase }}  </h1>
+  </div>
+</div>  
+
+<div class="row">
+  <div class="col-lg-3">
+    <h4 class="txt-filter pb-2">Filter</h4>
+    <div class="inputfather d-flex mb-3">
+      <div class="p-2">
+        <svg  data-testid="geist-icon" fill="none" height="20" shape-rendering="geometricPrecision" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="20" style="color:currentColor"><path d="M11 17.25a6.25 6.25 0 110-12.5 6.25 6.25 0 010 12.5z"></path><path d="M16 16l4.5 4.5"></path></svg>
+      </div>
+      <input [(ngModel)]="buscar" class="w-100" type="search" name="" id="" placeholder="Search..." >
+    </div>
+
+    <div  *ngFor="let categ of categoriaObj">
+      <p class="aside" [ngClass]="{active: filterActive==categ.id }" (click)="filtro(categ.id)">{{categ.nombre}}</p>
+    </div>
+  </div>
+  <div class="col-lg-9">
+    <div class="row">
+      <div class="col-lg-4 pb-4" *ngFor="let flor of buscarflores(buscar)">
+        <div class="card" >     
+          <div class="img-flores">
+              <img  src="{{flor.img}}" class="card-img-top " alt="..."> 
+              <div class="img-float d-flex justify-content-center align-items-center"><img  src="assets/img/favicon.svg" alt=""> </div>
+              
+          </div>           
+          <div class="card-body ">              
+              <h3 class="card-title">{{flor.nombre}}</h3>                
+          </div>
+      </div>   
+    </div>
+    
+  </div>
+</div>
+  
+  
+  

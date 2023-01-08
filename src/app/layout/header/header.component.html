@@ -17,8 +17,8 @@
         </li>
       </ul>
       <span class="d-flex">
-        <div class="mx-2" (click)="darkMode()">
-          <img src="assets/img/moon.svg" alt="theme">
+        <div class="mx-2" (click)="darkMode()">         
+          <img src="assets/img/{{this.darkmode?'sun':'moon'}}.svg" alt="theme">
         </div>
         <div class="mx-2 pb-1" (click)="idioma('eng')" [ngClass]="{'active' : flag=='eng'}"> 
           <img width="24" src="assets/img/eeuu-flag.png" alt="eeuu"> 

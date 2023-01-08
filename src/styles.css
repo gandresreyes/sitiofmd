@@ -3,17 +3,38 @@
 body{
     --color-bg:#fff;
     --color-txt: #000;
+    --navbar-toggler-bg:transparent;
+    --box-shadow-card: 0 5px 10px rgb(255 255 255 / 10%), inset -15px -15px 20px -10px #f6f6f6f6;
+    --background-color-card: rgba(255, 255, 255, 0.5);   
+    --border-card: 1px solid rgba( 255, 255, 255, 0.18 );
+    --text-h2:linear-gradient(180deg,rgba(0,0,0,.8),#000);
+    --color-border:rgba(0, 0, 0, 0.336);
+    --filter-img:invert(0)
+    
+
 }
 body.dark-mode{
     --color-bg:#000;
     --color-txt: #fff;
+    --navbar-toggler-bg:#99999961;
+    --box-shadow-card: 0 5px 10px rgba(63, 60, 60, 0.1), inset -15px -15px 20px -10px #1d1c1cf6;
+    --background-color-card: rgba(0, 0, 0, 0.5);   
+    --border-card: 1px solid rgba( 0, 0, 0, 0.18 );
+    --text-h2:linear-gradient(180deg,#fff,hsla(0,0%,100%,.75));    
+    --color-border:rgba(255, 255, 255, 0.336);
+    --filter-img:invert(1)
+   
 }
-
 
 body{
     background-color: var(--color-bg) ;
     color:  var(--color-txt);
+    overflow-x: hidden;
 }
+.navbar-toggler{
+    background-color:var(--navbar-toggler-bg)!important ;
+}
+
 @media (max-width: 960px){
     h1 {
         text-align: center;
@@ -21,3 +42,4 @@ body{
     }
     
 }
+

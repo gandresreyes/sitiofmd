@@ -15,37 +15,34 @@ export class IncioComponent implements OnInit {
 
   
   //@ViewChild('canvas') canvas!:ElementRef ;
-  @ViewChild('uno') uno!:ElementRef;
-  @ViewChild('dos') dos!:ElementRef;
-  @ViewChild('tres') tres!:ElementRef;
+  @ViewChild('uno') uno?:ElementRef;
+  @ViewChild('dos') dos?:ElementRef;
+  @ViewChild('tres') tres?:ElementRef;
   categoriaObj:any ;  
   textos:string = "";
+  cobe:number = 0;
 
   constructor(private idiomaserv: IdiomasService, private renderer2: Renderer2) { }
 
-  ngOnInit(): void {  
-   this.categoriaObj = categorias
-   this.idiomaserv.IdiomaAction$.subscribe(arg=>{      
-      if(arg == "es"){
-        this.textos = textoInicio.inicio.es        
-        this.renderer2.addClass(this.uno.nativeElement,'unoes')
-        this.renderer2.addClass(this.dos.nativeElement,'doses')
-        this.renderer2.addClass(this.tres.nativeElement,'treses')
-        
-      }else{
+  ngOnInit(): void {
+    this.categoriaObj = categorias
+    this.idiomaserv.IdiomaAction$.subscribe(arg => {
+      if (arg == "es") {
+        this.textos = textoInicio.inicio.es
+        this.renderer2.addClass(this.uno?.nativeElement, 'unoes')
+        this.renderer2.addClass(this.dos?.nativeElement, 'doses')
+        this.renderer2.addClass(this.tres?.nativeElement, 'treses')
+
+      } else {
         this.textos = textoInicio.inicio.eng
-        this.renderer2.removeClass(this.uno.nativeElement,'unoes')
-        this.renderer2.removeClass(this.dos.nativeElement,'doses')
-        this.renderer2.removeClass(this.tres.nativeElement,'treses')
-      }     
-   })
-    
-  }ngAfterViewInit():void{
-    
+        this.renderer2.removeClass(this.uno?.nativeElement, 'unoes')
+        this.renderer2.removeClass(this.dos?.nativeElement, 'doses')
+        this.renderer2.removeClass(this.tres?.nativeElement, 'treses')
+      }
+    })
   }
- 
-  /*
-  ngAfterViewInit():void{
+  
+  /*ngAfterViewInit():void{
     let canvas = this.canvas.nativeElement
     let phi = 0 
     const globe = createGlobe(canvas, {
@@ -54,7 +51,7 @@ export class IncioComponent implements OnInit {
       height: 1000,
       phi: 0,
       theta: -50,
-      dark: 0,
+      dark: 1,
       diffuse: 1.2,
       scale: 1,
       mapSamples: 10000,
