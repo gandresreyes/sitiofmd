@@ -21,13 +21,15 @@ export class IncioComponent implements OnInit {
   categoriaObj:any ;  
   textos:string = "";
   cobe:number = 0;
+  idiomaes:boolean = false;
 
   constructor(private idiomaserv: IdiomasService, private renderer2: Renderer2) { }
 
   ngOnInit(): void {
-    this.categoriaObj = categorias
-    this.idiomaserv.IdiomaAction$.subscribe(arg => {
+    this.categoriaObj = categorias    
+        this.idiomaserv.IdiomaAction$.subscribe(arg => {      
       if (arg == "es") {
+        this.idiomaes = true
         this.textos = textoInicio.inicio.es
         this.renderer2.addClass(this.uno?.nativeElement, 'unoes')
         this.renderer2.addClass(this.dos?.nativeElement, 'doses')
@@ -35,15 +37,23 @@ export class IncioComponent implements OnInit {
 
       } else {
         this.textos = textoInicio.inicio.eng
+        this.idiomaes = false
         this.renderer2.removeClass(this.uno?.nativeElement, 'unoes')
         this.renderer2.removeClass(this.dos?.nativeElement, 'doses')
         this.renderer2.removeClass(this.tres?.nativeElement, 'treses')
       }
     })
+   
   }
   
-  /*ngAfterViewInit():void{
-    let canvas = this.canvas.nativeElement
+  ngAfterViewInit():void{
+    if(this.idiomaes){
+      this.renderer2.addClass(this.uno?.nativeElement, 'unoes')
+      this.renderer2.addClass(this.dos?.nativeElement, 'doses')
+      this.renderer2.addClass(this.tres?.nativeElement, 'treses')
+    }
+   
+    /* let canvas = this.canvas.nativeElement
     let phi = 0 
     const globe = createGlobe(canvas, {
       devicePixelRatio: 2,
@@ -76,8 +86,8 @@ export class IncioComponent implements OnInit {
         state['phi'] = phi
         phi += 0.01        
       },
-    });
+    });*/
     
-  }*/
+  }
 
 }

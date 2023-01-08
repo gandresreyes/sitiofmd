@@ -17,7 +17,7 @@ export class PortafolioComponent implements OnInit {
   floresfilter:any = [];
   filterActive:string = "";
   result:any = [];
-
+  vacio:boolean = false
   constructor(private idiomaserv :IdiomasService) { }
 
   ngOnInit(): void {
@@ -35,21 +35,29 @@ export class PortafolioComponent implements OnInit {
     })
   
   }
+  viewAll(){
+    this.filterActive = ""
+    this.floresfilter = flores;
+    this.buscar = "";
+  }
 
   filtro(id:string){    
-    this.floresfilter = this.floresfilter.filter((flor:any)=>flor.id_cat == id)
+    this.floresfilter = flores.filter((flor:any)=>flor.id_cat == id)    
     this.filterActive = id
   }
   buscarflores(element:any){
     if(element==""){   
       if(this.filterActive !=""){
-        this.result = this.floresfilter.filter((flor:any)=>flor.id_cat == this.filterActive)
-      }else {
-        this.result = this.floresfilter
-      }        
+        this.result = flores.filter((flor:any)=>flor.id_cat == this.filterActive)
+        if(this.result==""){
+          this.vacio= true;
+        }        
+      }else {        
+        this.result = this.floresfilter        
+      }             
       return this.result
-    }else{
-      this.result = this.floresfilter.filter((flores:any)=>flores.nombre.toLowerCase().includes(element.toLowerCase()))
+    }else{      
+      this.result =this.floresfilter.filter((flores:any)=>flores.nombre.toLowerCase().includes(element.toLowerCase()))      
       return this.result
     }
   }

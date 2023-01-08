@@ -9,8 +9,9 @@ body{
     --border-card: 1px solid rgba( 255, 255, 255, 0.18 );
     --text-h2:linear-gradient(180deg,rgba(0,0,0,.8),#000);
     --color-border:rgba(0, 0, 0, 0.336);
-    --filter-img:invert(0)
-    
+    --filter-img:invert(0);
+    --parrafo-color:#444;
+    --bg-2:#eaeaea
 
 }
 body.dark-mode{
@@ -22,7 +23,9 @@ body.dark-mode{
     --border-card: 1px solid rgba( 0, 0, 0, 0.18 );
     --text-h2:linear-gradient(180deg,#fff,hsla(0,0%,100%,.75));    
     --color-border:rgba(255, 255, 255, 0.336);
-    --filter-img:invert(1)
+    --filter-img:invert(1);
+    --parrafo-color:#888;
+    --bg-2:#111
    
 }
 

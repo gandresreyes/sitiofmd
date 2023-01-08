@@ -12,6 +12,7 @@ import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 import { RedesComponent } from './layout/redes/redes.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { AcercadeComponent } from './pages/acercade/acercade.component';
 
 
 
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     BtnWspComponent,
     PortafolioComponent,
     RedesComponent,
-    FooterComponent
+    FooterComponent,
+    AcercadeComponent
   ],
   imports: [
     BrowserModule,

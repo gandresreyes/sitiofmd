@@ -1,0 +1,75 @@
+.titulo{
+    font-size: 56px;
+    font-weight: 700;
+    }
+.titulo::after{
+    content: "";
+    left: 50%;
+    top: 15%;
+    position: absolute;
+    filter: blur(45px);
+    transform: translateZ(0);    
+    background: radial-gradient(circle, rgba(0, 223, 216, 0.24) 32%, transparent 75%);
+    border-radius: 50%;
+    width: 480px;
+    height: 360px;
+    margin-left: -300px;
+}
+.titulo::before{
+    content: "";
+    left: 55%;
+    top: 15%;
+    position: absolute;
+    filter: blur(45px);
+    transform: translateZ(0);
+    background-color: #00dfd84f;
+    
+    width: 240px;
+    height: 180px;
+    z-index: -1;
+}
+.position-til{
+    height: 50vh;
+}
+.sub-titulo{
+    font-size: 24px;
+    color: var(--parrafo-color);
+}
+.img-size{
+    width: 8rem;
+    z-index: 999;
+}
+.parrafo{
+    font-size: 18px;
+    color: var(--parrafo-color);
+    line-height: 2rem;
+    font-weight: 400;;
+    font-size: 1.25rem;
+}
+.titulo2{
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: -.058125rem;   
+    line-height: 3.5rem;
+}
+.bg-2{
+    background-color: var(--bg-2); 
+}
+.person{
+    object-fit: cover;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--color-border);
+}
+
+.person img{
+    border-radius: 50%;
+    width: 100%;;
+    object-fit: cover
+}
+.titl-mison{
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

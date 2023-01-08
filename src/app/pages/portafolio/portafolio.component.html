@@ -20,8 +20,23 @@
       <p class="aside" [ngClass]="{active: filterActive==categ.id }" (click)="filtro(categ.id)">{{categ.nombre}}</p>
     </div>
   </div>
-  <div class="col-lg-9">
+  <div class="col-lg-9">    
     <div class="row">
+      
+      <div class="pb-2"> 
+        <button (click)="viewAll()"class="btn btn-all">{{textos[2]}}</button>
+        <span class="float-end">{{textos[1]}}: <b>{{buscarflores(buscar).length}}</b></span>
+      </div> 
+      <!--resppuest vacia -->
+        <div class="rta-vacia p-5 text-center" *ngIf="buscarflores(buscar).length==0">
+          <div class="p-2 circulo d-flex justify-content-center align-items-center mx-auto">
+            <svg  data-testid="geist-icon" fill="none" height="20" shape-rendering="geometricPrecision" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="20" style="color:currentColor"><path d="M11 17.25a6.25 6.25 0 110-12.5 6.25 6.25 0 010 12.5z"></path><path d="M16 16l4.5 4.5"></path></svg>
+          </div>
+          <p class="pt-2">No se encantraron resultados</p>
+
+        </div>
+      <!--end-->
+
       <div class="col-lg-4 pb-4" *ngFor="let flor of buscarflores(buscar)">
         <div class="card" >     
           <div class="img-flores">
@@ -30,11 +45,11 @@
               
           </div>           
           <div class="card-body ">              
-              <h3 class="card-title">{{flor.nombre}}</h3>                
+              <h3 class="card-title">{{flor.nombre}}</h3>
+              <span class="cate">{{flor.cat}}</span>  
           </div>
       </div>   
-    </div>
-    
+    </div>    
   </div>
 </div>
   
