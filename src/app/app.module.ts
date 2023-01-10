@@ -13,6 +13,7 @@ import { RedesComponent } from './layout/redes/redes.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { AcercadeComponent } from './pages/acercade/acercade.component';
+import { RouterModule } from "@angular/router";
 
 
 
@@ -32,7 +33,13 @@ import { AcercadeComponent } from './pages/acercade/acercade.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([],
+      {
+        anchorScrolling: 'enabled',
+        onSameUrlNavigation: 'reload',
+        scrollPositionRestoration: 'enabled'
+      })
   ],
   providers: [],
   bootstrap: [AppComponent]

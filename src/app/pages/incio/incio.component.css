@@ -60,6 +60,9 @@ h1 {
   background-color: var(--background-color-card);
   border:var(--border-card)
 }
+.card:hover{
+  border: 1px solid var(--color-txt);
+}
 .text-gray{
    color: #666;
 }
@@ -185,6 +188,24 @@ h1 {
   animation-iteration-count: infinite;   
   
 }
+div[id]{
+  scroll-margin-top:100px ;
+}
+a{
+  text-decoration: none;
+  color: var(--color-txt);
+}
+#contacto{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  
+}
+.form-contac{
+  backdrop-filter: blur(3px);
+  background-color: transparent;
+}
   @keyframes btn {
     0%,
     16.667%,
@@ -301,7 +322,7 @@ h1 {
     }
     .uno:before, .dos:before, .tres:before , .unoes::before , .doses::before , .treses::before{  
       font-size: 4rem;
-    }
+  }
 
 }
  

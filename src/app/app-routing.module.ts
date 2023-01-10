@@ -8,6 +8,7 @@ const routes: Routes = [
   {path:'',component: IncioComponent},
   {path:'',redirectTo:'/',pathMatch:'full'},
 
+  {path:'productos/:filtro', component: PortafolioComponent},
   {path:'productos', component: PortafolioComponent},
   {path:'acercade', component: AcercadeComponent}
 ];

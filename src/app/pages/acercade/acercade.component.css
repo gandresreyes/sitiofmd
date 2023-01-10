@@ -1,7 +1,7 @@
 .titulo{
     font-size: 56px;
     font-weight: 700;
-    }
+}
 .titulo::after{
     content: "";
     left: 50%;
@@ -73,3 +73,9 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+@media (max-width: 576px) { 
+    .titulo{
+        font-size: 36px;        
+    }
+  
+ }

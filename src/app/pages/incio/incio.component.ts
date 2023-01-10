@@ -26,8 +26,9 @@ export class IncioComponent implements OnInit {
   constructor(private idiomaserv: IdiomasService, private renderer2: Renderer2) { }
 
   ngOnInit(): void {
+    window.scroll(0, 0)
     this.categoriaObj = categorias    
-        this.idiomaserv.IdiomaAction$.subscribe(arg => {      
+    this.idiomaserv.IdiomaAction$.subscribe(arg => {      
       if (arg == "es") {
         this.idiomaes = true
         this.textos = textoInicio.inicio.es

@@ -18,7 +18,8 @@
             "14":"Para exportar, acompañamos cuidadosamente cada una de las etapas de la cadena de suministro, con lo cual nos aseguramos de que se cumplan los más altos estándares de trazabilidad. De esta forma, cargamos un contenedor de 40’HC, 20 paletas para un total de 1030 cajas por contenedor.",
             "15":"Flores.",
             "16":"Logística.",
-            "17":"Envíos."
+            "17":"Envíos.",
+            "18":"Contáctanos."
         },
         "eng":{
             "0":"WELCOME TO ",           
@@ -38,7 +39,9 @@
             "14":"For export, we carefully accompany each of the stages of the supply chain, with which we ensure the highest standards of traceability are met. In this way, we load a 40’HC container, 20 pallets for a total of 1030 boxes per container.",
             "15":"Flowers.",
             "16":"Logistics.",
-            "17":"Shipping."
+            "17":"Shipping.",
+            "18":"Contact Us."
+
 
         }
     }

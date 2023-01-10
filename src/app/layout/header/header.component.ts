@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 import textos from 'src/assets/json/textos.json'
 import { IdiomasService } from '../../servicios/idiomas.service';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

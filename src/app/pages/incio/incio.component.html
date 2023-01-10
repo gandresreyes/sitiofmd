@@ -34,16 +34,18 @@
      <!--inico de categorias-->   
     </div>
     <div class="col-lg-3" *ngFor="let categ of categoriaObj">
-        <div class="card" >     
-            <div class=" img-flores">
-                <img  src="assets/img/flores/categorias/{{categ.img}}" class="card-img-top " alt="...">  
-            </div>      
-                              
-            <div class="card-body d-flex justify-content-center align-items-center alto">
-                <span class="pb-2 "><img class="img-icon me-2" src="assets/img/flowe.svg" alt=""></span>
-                <h5 class="card-title text-width">{{categ.nombre}}</h5>                
+        <a [routerLink]="['/productos',categ.id]"  >
+            <div class="card"  >     
+                <div class=" img-flores">
+                    <img  src="assets/img/flores/categorias/{{categ.img}}" class="card-img-top " alt="...">  
+                </div>      
+                                
+                <div class="card-body d-flex justify-content-center align-items-center alto">
+                    <span class="pb-2 "><img class="img-icon me-2" src="assets/img/flowe.svg" alt=""></span>
+                    <h5 class="card-title text-width">{{categ.nombre}}</h5>                
+                </div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="pt-4 text-center">
         <button class="btn ver-mas ">{{textos[4] | titlecase }}</button>
@@ -71,7 +73,7 @@
         <div class="line-child" style="background:linear-gradient( transparent,#FF0080)"></div>
     </div>
     <div class="text-center">
-        <div class="number" style="background:linear-gradient(90deg, #7928CA,#FF0080)">2</div>
+        <div class="number" style="background:linear-gradient(90deg, #7928CA,#7928CA)">2</div>
     </div>
 
     <div class="text-center">
@@ -103,10 +105,13 @@
         </p> 
     </div>
 </div>
-<div class="row py-4">
-    <h4>Contactanos</h4>
-    <div class="col-lg-6 d-flex justify-content-center align-items-center">
-    <div class="border border-dark rounded p-4">
+<div class="row py-4 text-center" id="contacto" style="background-image: url(assets/img/bgc.svg);">
+    <h3 class="sub-line">{{textos[18] }}</h3> 
+    <p class="w-75 mx-auto pt-4 p-line" style="font-size:20px ;">
+        Send us your messages and we will gladly respond when we are available
+    </p>   
+    <div class="col-lg-8  mx-auto">
+    <div class="border border-dark rounded p-4 form-contac">
         <form class="row g-3 needs-validation" novalidate>
             <div class="col-md-6">
               <label for="validationCustom01" class="form-label">First name</label>
@@ -157,9 +162,7 @@
     </div>
 
     </div>
-    <div class="col-lg-6 overflow-hidden d-flex justify-content-center align-items-center">        
-    <canvas #canvas id="cobe" style="width: 500px; height: 500px;" width="1000" height="1000"></canvas>
-    </div>
+    
 
 </div>
     
