@@ -14,6 +14,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { AcercadeComponent } from './pages/acercade/acercade.component';
 import { RouterModule } from "@angular/router";
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -41,7 +42,9 @@ import { RouterModule } from "@angular/router";
         scrollPositionRestoration: 'enabled'
       })
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
