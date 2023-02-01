@@ -14,7 +14,7 @@ import textoInicio from 'src/assets/json/textosinicio.json'
 export class IncioComponent implements OnInit { 
 
   
-  //@ViewChild('canvas') canvas!:ElementRef ;
+ // @ViewChild('canvas') canvas!:ElementRef ;
   @ViewChild('uno') uno?:ElementRef;
   @ViewChild('dos') dos?:ElementRef;
   @ViewChild('tres') tres?:ElementRef;
