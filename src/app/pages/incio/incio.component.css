@@ -1,30 +1,4 @@
-.uno {
-    --start-color:#007CF0; --end-color:#00DFD8; --content: 'Flowers.';
-}
-.dos{
-    --start-color:#7928CA; --end-color:#FF0080; --content: 'Logistics.';--animation:a2;--animation2:b2
- }
-.tres{
-    --start-color:#FF4D4D; --end-color:#F9CB28; --content: 'Shipping.';--animation: a3;--animation2:b3
-}
-.unoes{
-   --content: 'Flores.';
-}
-.doses{
-  --content: 'Logística.';
-}
-.treses{
-  --content: 'Envíos.';
-}
-.uno ,.dos , .tres , .unoes, .doses , .treses  {    
-  display: inline-block;
-  font-size: 6rem;
-  line-height: 1.1;
-  position: relative;
-  animation-name: var(--animation2, b);
-  animation-duration: 8s;
-  animation-iteration-count: infinite;
-}
+
 .alto{
   height: 90px;
   min-height: 88px;  
@@ -77,23 +51,7 @@ h1 {
   font-size: 0.8rem; 
   font-weight: 700;  
 }  
-.uno:before, .dos:before, .tres:before , .unoes::before , .doses::before , .treses::before{   
-  content: var(--content);
-  position: absolute;
-  background:linear-gradient(90deg, var(--start-color), var(--end-color)) ;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text; 
-  font-size: 6rem;   
-  inset: 0; 
-  opacity: 1;       
-  width: 100%;    
-  margin-bottom: -10px;  
-  animation-name: var(--animation, a);
-  animation-duration: 8s;
-  animation-iteration-count: infinite;
-  }
+
 
 .ver-mas{
   position: relative;
@@ -206,123 +164,5 @@ a{
   backdrop-filter: blur(3px);
   background-color: transparent;
 }
-  @keyframes btn {
-    0%,
-    16.667%,
-    100%{background:linear-gradient(90deg, #007CF0,#00DFD8);transition: 0.5s;
-        box-shadow:  0px 20px  25px  -10px #00dfd846, 0px -20px 25px -10px #007cf06b
-
-     }
-    33.333%,
-    50%{background:linear-gradient(90deg, #7928CA,#FF0080);transition: 0.5s;
-        box-shadow:  0px 20px  25px  -10px #FF008046, 0px -20px 25px -10px #7928CA6b
-    }
-    66.667%,
-    83.333%{background:linear-gradient(90deg, #FF4D4D,#F9CB28);transition: 0.5s;
-        box-shadow:  0px 20px  25px  -10px #F9CB2846, 0px -20px 25px -10px #FF4D4D6b
-    }
-
-  }
   
-  @keyframes a {
-
-    0%,
-    16.667%,
-    100% {
-      opacity: 1;
-      
-    }
-  
-    33.333%,
-    83.333% {
-      opacity: 0;      
-    }
-  }
-  
-  @keyframes a2 {
-  
-    0%,
-    100% {
-      opacity: 0;
-    }
-  
-    33.333%,
-    50% {
-      opacity: 1;
-    }
-  
-    16.667%,
-    66.667% {
-      opacity: 0;
-    }
-  }
-  
-  @keyframes a3 {
-    0%,
-    50%,
-    100% {
-      opacity: 0;
-    }
-  
-    66.667%,
-    83.333% {
-      opacity: 1;
-    }
-  }
-  /*animacion2*/
-  @keyframes b {
-
-    0%,
-    16.667%,
-    100% {
-      color: transparent;
-      
-    }
-  
-    33.333%,
-    83.333% {
-      color: var(--color-txt);     
-    }
-  }
-  
-  @keyframes b2 {
-  
-    0%,
-    100% {
-      color: var(--color-txt);
-    }
-  
-    33.333%,
-    50% {
-      color: transparent;
-    }
-  
-    16.667%,
-    66.667% {
-      color: var(--color-txt); 
-    }
-  }
-  
-  @keyframes b3 {
-    0%,
-    50%,
-    100% {
-      color: var(--color-txt); 
-     
-    }
-  
-    66.667%,
-    83.333% {
-      color: transparent; 
-    }
-  }
-  @media (max-width: 576px) { 
-    .uno ,.dos , .tres , .unoes, .doses , .treses  {   
-        font-size: 4rem;
-    }
-    .uno:before, .dos:before, .tres:before , .unoes::before , .doses::before , .treses::before{  
-      font-size: 4rem;
-  }
-
-}
  

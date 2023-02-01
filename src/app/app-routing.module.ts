@@ -5,12 +5,12 @@ import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 import { AcercadeComponent } from './pages/acercade/acercade.component';
 
 const routes: Routes = [
-  {path:'',component: IncioComponent},
+  {path:'',title:'Home | Fmd' ,component: IncioComponent},
   {path:'',redirectTo:'/',pathMatch:'full'},
 
-  {path:'productos/:filtro', component: PortafolioComponent},
-  {path:'productos', component: PortafolioComponent},
-  {path:'acercade', component: AcercadeComponent}
+  {path:'productos/:filtro',title:'Products | Fmd' ,component: PortafolioComponent},
+  {path:'productos', title:'Products | Fmd' ,component: PortafolioComponent},
+  {path:'acercade', title:'About | Fmd' ,component: AcercadeComponent}
 ];
 
 @NgModule({

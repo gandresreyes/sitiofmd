@@ -52,14 +52,14 @@ export class PortafolioComponent implements OnInit {
     this.filterActive = ""
     this.floresfilter = flores;
     this.buscar = ""    
-    history.pushState(null, "", 'productos');
+    history.pushState(null, "", '#/productos');
     
   }
 
   filtro(id:string){    
     this.floresfilter = flores.filter((flor:any)=>flor.id_cat == id)    
     this.filterActive = id    
-    history.pushState(null, "", 'productos/'+id);
+    history.pushState(null, "", '#/productos/'+id);
     
   }
   buscarflores(element:any){

@@ -55,8 +55,7 @@
 .bg-2{
     background-color: var(--bg-2); 
 }
-.person{
-    object-fit: cover;
+.person{   
     border-radius: 50%;
     width: 200px;
     height: 200px;
@@ -66,7 +65,9 @@
 .person img{
     border-radius: 50%;
     width: 100%;;
-    object-fit: cover
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
 }
 .titl-mison{
     -webkit-background-clip: text;
