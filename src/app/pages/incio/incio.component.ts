@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
-import createGlobe from 'cobe'
 import categorias from 'src/assets/json/categorias.json'
 import { IdiomasService } from '../../servicios/idiomas.service';
 import textoInicio from 'src/assets/json/textosinicio.json'
+import { CorreosApiService } from '../../servicios/correos-api.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -22,10 +23,15 @@ export class IncioComponent implements OnInit {
   textos:string = "";
   cobe:number = 0;
   idiomaes:boolean = false;
+  enviando:boolean = false;
+  texto:string  = "Submit";
+  enviado:boolean = false;
 
-  constructor(private idiomaserv: IdiomasService, private renderer2: Renderer2) { }
+  constructor(private idiomaserv: IdiomasService, private renderer2: Renderer2, private apicorreo:CorreosApiService, private fb:FormBuilder) {}
+  formCorreo!:FormGroup;
 
   ngOnInit(): void {
+    this.iniciaForm();
     window.scroll(0, 0)
     this.categoriaObj = categorias    
     this.idiomaserv.IdiomaAction$.subscribe(arg => {      
@@ -46,6 +52,83 @@ export class IncioComponent implements OnInit {
     })
    
   }
+  iniciaForm(){
+    this.formCorreo=this.fb.group({
+      nombres:['',[Validators.required,Validators.minLength(3)]],
+      correo:['',[Validators.required,,Validators.email]],
+      phone:['',[Validators.required,Validators.minLength(7)]],
+      subject:['',[Validators.required,Validators.minLength(5)]],
+      mensaje:['',[Validators.required,Validators.minLength(5)]]
+
+    })
+  }
+
+  validarNum(phone:string){
+    this.formCorreo.controls[phone].valueChanges.subscribe((change:any)=>{
+      var valor = change.replace(/[a-zA-Z]/g,'').trim();    
+     
+      this.formCorreo.get(phone)?.patchValue(valor,{emitEvent: false});
+    });
+  }
+  get nombresNV(){
+    return(
+      this.formCorreo.get('nombres')?.invalid &&
+      this.formCorreo.get('nombres')?.touched
+    )
+  }
+  get correoNV(){
+    return(
+      this.formCorreo.get('correo')?.invalid &&
+      this.formCorreo.get('correo')?.touched
+    )
+  }
+  get phoneNV(){
+    this.validarNum('phone');
+    return(
+      this.formCorreo.get('phone')?.invalid &&
+      this.formCorreo.get('phone')?.touched
+    )
+  }
+  get subjectNV(){
+    return(
+      this.formCorreo.get('subject')?.invalid &&
+      this.formCorreo.get('subject')?.touched
+    )
+  }
+  get mensajeNV(){
+    return(
+      this.formCorreo.get('mensaje')?.invalid &&
+      this.formCorreo.get('mensaje')?.touched
+    )
+  }
+
+  sendEmail(){
+    if(this.formCorreo.invalid){
+      return Object.values(this.formCorreo.controls).forEach((control) =>{
+        control.markAllAsTouched();
+      })
+    }else{
+      this.enviando=true
+      this.texto= "Sending"
+      this.apicorreo.sendMail(this.formCorreo.value).subscribe(  
+        {
+        next:(data:any) =>{          
+          this.enviando = false
+          this.formCorreo.reset();
+          this.texto= "Submit"
+          this.enviado=true
+
+        },error:(error:any)=>{
+          console.log(error)
+          this.enviando = false
+        }
+      }
+        
+      )
+      
+    }
+
+  }
   
   ngAfterViewInit():void{
     if(this.idiomaes){
@@ -53,41 +136,6 @@ export class IncioComponent implements OnInit {
       this.renderer2.addClass(this.dos?.nativeElement, 'doses')
       this.renderer2.addClass(this.tres?.nativeElement, 'treses')
     }
-   
-    /* let canvas = this.canvas.nativeElement
-    let phi = 0 
-    const globe = createGlobe(canvas, {
-      devicePixelRatio: 2,
-      width: 1000,
-      height: 1000,
-      phi: 0,
-      theta: -50,
-      dark: 1,
-      diffuse: 1.2,
-      scale: 1,
-      mapSamples: 10000,
-      mapBrightness: 6,
-      baseColor: [1, 1, 1],
-      markerColor: [0, 0, 1],
-      glowColor: [1, 1, 1],
-      offset: [0, 0],
-      opacity:0.8,
-    markers: [
-        { location: [37.7595, -122.4367], size: 0.03 },       
-        { location: [4.3556, -74.0451], size: 0.1 },//bogota
-        { location: [25.7751, -80.2105], size: 0.1 },//miami
-        { location: [28.4153, -81.2988], size: 0.05 },//orlando
-        { location: [40.4250, -74.0001], size: 0.05 },//new york
-        { location: [51.3030, 0.0732], size: 0.05 },//londres
-        { location: [52.3128, 13.2438], size: 0.05 },//alemania
-        { location: [48.5142, 2.2056], size: 0.05 },//paris
-        { location: [40.2459, 3.4209], size: 0.05 },//españa
-      ],
-      onRender: (state) => {      
-        state['phi'] = phi
-        phi += 0.01        
-      },
-    });*/
     
   }
 

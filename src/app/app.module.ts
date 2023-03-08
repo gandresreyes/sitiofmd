@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 import { RedesComponent } from './layout/redes/redes.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AcercadeComponent } from './pages/acercade/acercade.component';
 import { RouterModule } from "@angular/router";
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
@@ -35,6 +35,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([],
       {
         anchorScrolling: 'enabled',
